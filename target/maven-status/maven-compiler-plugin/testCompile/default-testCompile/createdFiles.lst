@@ -1,10 +1,11 @@
-api\test\DDTests.class
-api\test\UserTests2.class
 api\test\UserTests.class
 api\utilities\ExtentReportManager.class
 api\utilities\DataProviders.class
-api\endpoints\userendpoints2.class
 api\payload\User.class
-api\utilities\XLUtility.class
 api\endpoints\Routes.class
+api\test\DDTests.class
+api\test\UserTests2.class
+api\endpoints\userendpoints2.class
+api\utilities\XLUtility.class
+api\test\SchemaValidation.class
 api\endpoints\userendpoints.class

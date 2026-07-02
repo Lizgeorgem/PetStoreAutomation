@@ -11,9 +11,10 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import api.test.SchemaValidation;
 
 public class UserTests {
-	User userpayload;
+	public static User userpayload;
 	Faker fake;
 	
 	@BeforeClass
@@ -32,14 +33,14 @@ public class UserTests {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1,groups="post")
 	public void testpostuser()
 	{
 		Response res=userendpoints.createuser(userpayload);
 		Assert.assertEquals(res.getStatusCode(),200);
 	}
 	
-	@Test(priority=2)
+	@Test(dependsOnGroups="schema")
 	public void testReaduser()                  
 	{
 		
@@ -50,10 +51,10 @@ public class UserTests {
 		Assert.assertEquals(UserName,this.userpayload.getUsername());
 	}
 	
-	@Test(priority=3)
+	@Test(dependsOnMethods="testReaduser")
 	public void testUpdateuser()
 	{
-		userpayload.setUsername(fake.name().username());
+		//userpayload.setUsername(fake.name().username());
 		userpayload.setFirstName(fake.name().firstName());
 		userpayload.setLastName(fake.name().lastName());
 		Response res=userendpoints.Updateuser(userpayload, this.userpayload.getUsername());
@@ -64,7 +65,7 @@ public class UserTests {
 		resafter.then().body("username",equalTo(this.userpayload.getUsername()));
 	}
 	
-	@Test(priority=4)
+	@Test(dependsOnMethods="testUpdateuser")
 	public void testDeleteuser()
 	{
 		Response res=userendpoints.Deleteuser(this.userpayload.getUsername());
