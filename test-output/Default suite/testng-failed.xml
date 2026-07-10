@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api.test.DDStoreTests2">
+      <class name="api.chaining.test.Retrievepetdetails">
         <methods>
-          <include name="testgetorder" invocation-numbers="0 1"/>
-          <include name="testdeleteeorder" invocation-numbers="0 1"/>
+          <include name="getpet" invocation-numbers="0"/>
         </methods>
-      </class> <!-- api.test.DDStoreTests2 -->
+      </class> <!-- api.chaining.test.Retrievepetdetails -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

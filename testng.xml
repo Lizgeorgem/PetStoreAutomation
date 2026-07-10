@@ -2,16 +2,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <listeners>
-<listener class-name="api.utilities.ExtentReportManager"/>
+ <listener class-name="api.utilities.ExtentReportManager"/>
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="api.test.DDStoreTests2"/>
-      <class name="api.test.UserTests"/>
-      <class name="api.test.SchemaValidation"/>
+      <class name="api.test.StoreTests2"/>
+      <class name="api.test.PetTests"/>
+      <class name="api.test.PetTests2"/>
       <class name="api.test.UserTests2"/>
-      <class name="api.test.StoreTests"/>
+      <class name="api.chaining.test.Addanewpet"/>
+      <class name="api.test.DDStoreTests2"/>
+      <class name="api.chaining.test.Deletepetdetails"/>
+      <class name="api.test.PetSchemaValidation"/>
+      <class name="api.test.UserTests"/>
+      <class name="api.chaining.test.Updatepetdetails"/>
+      <class name="api.test.SchemaValidation"/>
+      <class name="api.chaining.test.Retrievepetdetails"/>
+      <class name="api.test.DDPetTests"/>
       <class name="api.test.DDTests"/>
+      <class name="api.test.StoreTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
